@@ -20,7 +20,7 @@ class CreateProdutosTable extends Migration
             $table->string('nome');
             $table->double('preco');
             $table->string('descricao');
-            $table->int('quantidade');
+            $table->integer('quantidade');
 
             $table->timestamps();
         });

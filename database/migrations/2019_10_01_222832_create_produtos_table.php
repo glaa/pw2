@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAtendimentosTable extends Migration
+class CreateProdutosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateAtendimentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('atendimentos', function (Blueprint $table) {
+        Schema::create('produtos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('atendimento_id');
+            $table->integer('produto_id');
             $table->string('cpf_cnpj');
-            $table->string('cliente_id');
-            $table->string('data');
+            $table->string('nome');
+            $table->double('preco');
+            $table->string('descricao');
+            $table->int('quantidade');
 
             $table->timestamps();
         });
@@ -31,6 +33,6 @@ class CreateAtendimentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('atendimentos');
+        Schema::dropIfExists('produtos');
     }
 }

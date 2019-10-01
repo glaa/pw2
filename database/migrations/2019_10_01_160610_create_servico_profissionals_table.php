@@ -16,6 +16,8 @@ class CreateServicoProfissionalsTable extends Migration
         Schema::create('servico_profissionals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->foreign("profissional_id")->references("id")->on("profissionals");
+            $table->foreign("servico_id")->references("id")->on("servicos");
         });
     }
 

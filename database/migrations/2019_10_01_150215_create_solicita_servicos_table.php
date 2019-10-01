@@ -16,6 +16,8 @@ class CreateSolicitaServicosTable extends Migration
         Schema::create('solicita_servicos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->foreign("agendamento_id")->references("id")->on("agendamentos");
+            $table->foreign("servico_id")->references("id")->on("servicos");
         });
     }
 

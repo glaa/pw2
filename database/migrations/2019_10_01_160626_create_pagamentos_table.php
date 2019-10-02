@@ -16,7 +16,7 @@ class CreatePagamentosTable extends Migration
         Schema::create('pagamentos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->date('data');
+            $table->dateTime('data');
             $table->decimal('valor',6,2);
             $table->integer('parcela');
             $table->enum('tipo',['À vista','Crédito','Débito']);

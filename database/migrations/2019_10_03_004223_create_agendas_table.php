@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePagamentosTable extends Migration
+class CreateAgendasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreatePagamentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('pagamentos', function (Blueprint $table) {
+        Schema::create('agendas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->dateTime('data');
-            $table->decimal('valor',6,2);
-            $table->integer('parcela');
-            $table->enum('tipo',['À vista','Crédito','Débito']);
+            $table->bigInteger('cpf_cnpj')->unsigned();
+            $table->bigInteger('profissional_id')->unsigned();
+            //$table->foreign('cpf_cnpj')>references("cpf_cnpj")->on("estabelecimentos");
+            $table->foreign('profissional_id')->references("id")->on("profissionals");
         });
     }
 
@@ -30,6 +30,6 @@ class CreatePagamentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pagamentos');
+        Schema::dropIfExists('agendas');
     }
 }

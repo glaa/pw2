@@ -18,11 +18,10 @@ class CreateAgendamentosTable extends Migration
             $table->timestamps();
             $table->dateTime('data');
             $table->string('hora');
-            $table->bigInteger('cliente_id')->unsingned;
-            $table->bigInteger('agenda_id')->unsingned;
-            $table->foreign("cliente_id")->references("id")->on("clientes");
-            $table->foreign("agenda_id")->references("id")->on("agendas");
-
+            $table->bigInteger('cliente_id')->unsigned();
+            $table->bigInteger('agenda_id')->unsigned();
+            //$table->foreign('cliente_id')>references("id")->on("clientes");
+            $table->foreign('agenda_id')->references("id")->on("agendas");
         });
     }
 

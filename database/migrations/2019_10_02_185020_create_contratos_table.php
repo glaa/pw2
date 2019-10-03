@@ -18,7 +18,7 @@ class CreateContratosTable extends Migration
             $table->timestamps();
             $table->bigInteger('cpf_cnpj')->unsigned();
             $table->bigInteger("profissional_id")->unsigned();
-            $table->foreing('cpf_cnpj')>references("cpf_cnpj")->on("estabelecimentos");
+            //$table->foreign('cpf_cnpj')>references("cpf_cnpj")->on("estabelecimentos");
             $table->foreign("profissional_id")->references("id")->on("profissionals");
         });
     }

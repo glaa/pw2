@@ -17,11 +17,10 @@ class CreateDisponibilidadesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('dia');
-            $tabla->string('hora_inicio');
+            $table->string('hora_inicio');
             $table->string('hora_fim');
             $table->bigInteger('contrato_id')->unsigned();
-            $table->foreing('contrato_id')>references("id")->on("contratos");
-
+            $table->foreign('contrato_id')->references("id")->on("contratos");
         });
     }
 

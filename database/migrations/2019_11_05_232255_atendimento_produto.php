@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgendasTable extends Migration
+class AtendimentoProduto extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateAgendasTable extends Migration
      */
     public function up()
     {
-        Schema::create('agendas', function (Blueprint $table) {
+        Schema::create('atendimento_produto', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->bigInteger('cpf_cnpj')->unsigned();
-            $table->bigInteger('profissional_id')->unsigned();
-            //$table->foreign('cpf_cnpj')>references("cpf_cnpj")->on("estabelecimentos");
-            $table->foreign('profissional_id')->references("id")->on("profissionals");
+
+            $table->bigInteger('atendimento_id')->unsigned();
+            $table->bigInteger('produto_id')->unsigned();
         });
     }
 
@@ -30,6 +29,6 @@ class CreateAgendasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agendas');
+        Schema::dropIfExists('atendimento_produto');
     }
 }

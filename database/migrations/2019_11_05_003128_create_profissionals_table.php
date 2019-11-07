@@ -16,7 +16,8 @@ class CreateProfissionalsTable extends Migration
         Schema::create('profissionals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('nome',100);
+
+            $table->string('nome');
         });
     }
 

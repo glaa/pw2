@@ -36,19 +36,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function endereco()
-    {
-        return $this->belongsTo('App\Endereco');
-    }
-
-    public function cliente()
-    {
-        return $this->hasOne('App\Cliente');
-    }
-
-    public function estabelecimento()
-    {
-        return $this->hasMany('App\Estabelecimento');
-    }
 }

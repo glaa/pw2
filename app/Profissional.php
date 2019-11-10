@@ -11,4 +11,24 @@ class Profissional extends Model
     {
         return $this->belongsToMany('App\Agendamento');
     }
+
+    public function contratos()
+    {
+        return $this->hasMany('App\Contrato');
+    }
+
+    public function agendas()
+    {
+        return $this->hasMany('App\Agenda');
+    }
+
+    public function atendimentos()
+    {
+        return $this->belongsToMany('App\Atendimento');
+    }
+
+    public function servicos()
+    {
+        return $this->belongsToMany('App\Servico');
+    }
 }

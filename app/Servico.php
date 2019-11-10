@@ -11,4 +11,14 @@ class Servico extends Model
     {
         return $this->belongsToMany('App\Agendamento');
     }
+
+    public function profissionais()
+    {
+        return $this->belongsToMany('App\Profissional');
+    }
+
+    public function atendimentos()
+    {
+        return $this->belongsToMany('App\Atendimento');
+    }
 }

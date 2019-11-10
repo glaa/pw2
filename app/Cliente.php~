@@ -21,9 +21,4 @@ class Cliente extends Model
     {
         return $this->hasMany('App\Atendimento');
     }
-
-    public function agendamentos()
-    {
-        return $this->hasMany('App\Agendamento');
-    }
 }   

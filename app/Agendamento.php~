@@ -16,9 +16,4 @@ class Agendamento extends Model
     {
         return $this->belongsToMany('App\Profissional');
     }
-
-    public function cliente()
-    {
-        return $this->belongsTo('App\Cliente');
-    }
 }

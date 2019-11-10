@@ -32,6 +32,11 @@ class Estabelecimento extends Model
         return $this->hasMany('App\Atendimento');
     }
 
+    public function clientes()
+    {
+        return $this->belongsToMany('App\Cliente');
+    }
+
     public function produtos()
     {
         return $this->hasMany('App\Produto');

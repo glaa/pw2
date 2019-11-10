@@ -14,7 +14,7 @@ class Contrato extends Model
 
     public function estabelecimento()
     {
-        return $this->belongsTo('App\Estabelecimento');
+        return $this->belongsTo('App\Disponibilidade');
     }
 
     public function profissional()

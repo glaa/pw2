@@ -9,7 +9,7 @@ class Cliente extends Model
     //
     public function usuario()
     {
-        return $this->hasOne('App\User');
+        return $this->belongnsTo('App\User');
     }
 
     public function estabelecimentos()

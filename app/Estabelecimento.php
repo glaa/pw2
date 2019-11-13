@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Estabelecimento extends Model
 {
-    //
     public function clientes()
     {
         return $this->belongsToMany('App\Cliente');

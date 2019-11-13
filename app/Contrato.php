@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contrato extends Model
 {
-    //
     public function disponibilidades()
     {
         return $this->hasMany('App\Disponibilidade');

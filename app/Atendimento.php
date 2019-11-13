@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Atendimento extends Model
 {
-    //
     public function cliente()
     {
         return $this->belongsTo('App\Cliente');

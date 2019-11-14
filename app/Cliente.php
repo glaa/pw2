@@ -15,7 +15,7 @@ class Cliente extends Model
 
     public static $rules = [
         'apelido' => 'required|min:5|max:40',
-        'usuario_id' => 'required'
+        'usuario_id' => 'required|unique:users,id|exists:users,id',
     ];
     
     public static $messages = [
@@ -29,7 +29,7 @@ class Cliente extends Model
 
     public function estabelecimentos()
     {
-        return $this->hasMany('App\Estabelecimento');
+        return $this->belongsToMany('App\Estabelecimento')->withPivot('cliente_estabelecimento');
     }
 
     public function atendimentos()

@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Cliente;
 
-class AgendamentoTableSeeder extends Seeder
+class ClientesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class AgendamentoTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Agendamento::class, 5)->create();
+        factory(Cliente::class, 10)->create();
     }
 }

@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
 
             $table->string('telefone');
             $table->bigInteger('endereco_id')->unsigned();
-            $table->enum('tipo_usuario', ['cliente', 'estabelecimento']);
+            $table->enum('tipo_usuario', ['CLIENTE', 'ESTABELECIMENTO']);
         });
     }
 

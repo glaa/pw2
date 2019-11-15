@@ -16,7 +16,7 @@ class Endereco extends Model
         'bairro' => 'required|min:2|max:40', 
         'cidade' => 'required|min:2|max:40', 
         'estado' => 'required|min:2|max:2', 
-        'cep' => 'required|digits_between:8,8', 
+        'cep' => 'required|digits:8', 
         'numero' => 'required|digits',
     ];
 

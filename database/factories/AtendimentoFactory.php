@@ -7,6 +7,9 @@ use Faker\Generator as Faker;
 
 $factory->define(Model::class, function (Faker $faker) {
     return [
-        //
+        /**'estabelecimento_id', 
+        'cliente_id', 
+        'pagamento_id',    
+        'data',*/
     ];
 });

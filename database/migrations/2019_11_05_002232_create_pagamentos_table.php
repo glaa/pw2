@@ -20,7 +20,7 @@ class CreatePagamentosTable extends Migration
             $table->date('data');
             $table->decimal('valor', 6,2)->unsigned();
             $table->integer('parcela')->unsigned();
-            $table->enum('tipo',['À vista','Crédito','Débito']);
+            $table->enum('tipo',['A_VISTA', 'CREDITO', 'DEBITO']);
 
         });
     }

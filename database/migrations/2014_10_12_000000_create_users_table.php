@@ -21,6 +21,10 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->string('telefone');
+            $table->bigInteger('endereco_id')->unsigned();
+            $table->enum('tipo_usuario', ['cliente', 'estabelecimento']);
         });
     }
 

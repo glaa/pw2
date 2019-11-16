@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgendamentosTable extends Migration
+class CreateAtendimentosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateAgendamentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('agendamentos', function (Blueprint $table) {
+        Schema::create('atendimentos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->dateTime('data');
-            $table->string('hora');
+
+            $table->bigInteger('estabelecimento_id')->unsigned();
             $table->bigInteger('cliente_id')->unsigned();
-            $table->bigInteger('agenda_id')->unsigned();
-            //$table->foreign('cliente_id')>references("id")->on("clientes");
-            $table->foreign('agenda_id')->references("id")->on("agendas");
+            $table->bigInteger('pagamento_id')->unsigned();
+            $table->date('data');
+            
         });
     }
 
@@ -32,6 +32,6 @@ class CreateAgendamentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agendamentos');
+        Schema::dropIfExists('atendimentos');
     }
 }

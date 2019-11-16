@@ -41,12 +41,12 @@ class Atendimento extends Model
 
     public function profissionais()
     {
-        return $this->belongsToMany('App\Profissional');
+        return $this->belongsToMany('App\Profissional')->withPivot('atendimento_profissional');
     }
 
     public function servicos()
     {
-        return $this->belongsToMany('App\Servico');
+        return $this->belongsToMany('App\Servico')->withPivot('atendimento_servico');
     }
 
     public function pagamento()
@@ -56,6 +56,6 @@ class Atendimento extends Model
 
     public function produtos()
     {
-        return $this->belongsToMany('App\Produto');
+        return $this->belongsToMany('App\Produto')->withPivot('atendimento_produto');
     }
 }

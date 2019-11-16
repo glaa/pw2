@@ -15,7 +15,7 @@ class Pagamento extends Model
 
     public static $rules = [
         'data' => 'required|date',
-        'valor' => 'required|regex:/^\d+(\,\d{1,2})?$/',
+        'valor' => 'required|regex:/^\d+(\.\d{1,2})?$/',
         'parcela' => 'required|numeric',
         'tipo' => 'required|in A_VISTA, CREDITO, DEBITO',        
     ];

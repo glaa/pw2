@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ProfissionalAgendamento extends Migration
+class AgendamentoServico extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class ProfissionalAgendamento extends Migration
      */
     public function up()
     {
-        Schema::create('profissional_agendamento', function (Blueprint $table) {
+        Schema::create('agendamento_servico', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
 
-            $table->bigInteger('profissional_id')->unsigned();
             $table->bigInteger('agendamento_id')->unsigned();
+            $table->bigInteger('servico_id')->unsigned();
         });
     }
 
@@ -29,6 +29,6 @@ class ProfissionalAgendamento extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profissional_agendamento');
+        Schema::dropIfExists('agendamento_servico');
     }
 }

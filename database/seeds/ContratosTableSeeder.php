@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Servico;
+use App\Contrato;
 
-class ServicosTableSeeder extends Seeder
+class ContratosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class ServicosTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Servico::class, 5)->create();
+        factory(Contrato::class, 10)->create();
     }
 }

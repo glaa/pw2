@@ -15,8 +15,7 @@ $factory->define(Servico::class, function (Faker $faker) {
     ];
 });
 
-/**Povoa a tabela atendimento_produto, atendimento_servico e atendimento_profissional, 
- *, cujo o relacinamento são nxm
+/**Povoa a tabela servico_profissional, cujo o relacinamento são nxm
  *  
  */
 $factory->afterCreating(Servico::class, function ($servico, $faker) {
@@ -27,6 +26,6 @@ $factory->afterCreating(Servico::class, function ($servico, $faker) {
     }
 
     $profissionais = App\Produto::find($arrey_profissionais);
-    $servico->produtos()->attach($profissionais);
+    $servico->profissionais()->attach($profissionais);
 });
 

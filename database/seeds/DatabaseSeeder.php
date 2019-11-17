@@ -16,22 +16,10 @@ class DatabaseSeeder extends Seeder
         $this->call(PagamentosTableSeeder::class);
         $this->call(ProdutosTableSeeder::class);
         $this->call(ProfissionalsTableSeeder::class);
+        $this->call(ServicosTableSeeder::class);
         $this->call(AtendimentosTableSeeder::class);
-        //$this->call(EnderecosTableSeeder::class);
-        //$this->call(UsersTableSeeder::class);
-        /**$this->call(UsuarioTableSeeder::class);
-        $this->call(ClienteTableSeeder::class);
-        $this->call(EnderecoTableSeeder::class);
-        $this->call(ProfissionalTableSeeder::class);
-        $this->call(ServicoTableSeeder::class);
-        $this->call(PagamentoTableSeeder::class);
-        $this->call(AgendaTableSeeder::class);
-        $this->call(AgendamentoTableSeeder::class);
-        $this->call(ContratoTableSeeder::class);
-        $this->call(DisponibilidadeTableSeeder::class);
-        $this->call(Solicita_servicoTableSeeder::class);
-        $this->call(Servico_profissionalTableSeeder::class);*/
-
-
+        $this->call(ContratosTableSeeder::class);
+        $this->call(DisponibilidadesTableSeeder::class);
+        $this->call(AgendamentosTableSeeder::class);
     }
 }

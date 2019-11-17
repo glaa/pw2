@@ -29,12 +29,12 @@ class Agendamento extends Model
 
     public function servicos()
     {
-        return $this->belongsToMany('App\Servico')->withPivot('servico_agendamento');
+        return $this->belongsToMany('App\Servico')->withPivot('agendamento_servico');
     }
     
     public function profissionais()
     {
-        return $this->belongsToMany('App\Profissional')->withPivot('profissional_agendamento');
+        return $this->belongsToMany('App\Profissional')->withPivot('agendamento_profissional');
     }
 
     public function cliente()

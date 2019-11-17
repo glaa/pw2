@@ -32,7 +32,7 @@ class Servico extends Model
 
     public function agendamentos()
     {
-        return $this->belongsToMany('App\Agendamento')->withPivot('servico_agendamento');
+        return $this->belongsToMany('App\Agendamento')->withPivot('agendamento_servico');
     }
 
     public function profissionais()

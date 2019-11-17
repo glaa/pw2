@@ -21,7 +21,7 @@ class Profissional extends Model
 
     public function agendamentos()
     {
-        return $this->belongsToMany('App\Agendamento')->withPivot('profissional_agendamento');
+        return $this->belongsToMany('App\Agendamento')->withPivot('agendamento_profissional');
     }
 
     public function contratos()

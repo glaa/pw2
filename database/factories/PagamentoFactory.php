@@ -5,13 +5,12 @@
 use App\Pagamento;
 use Faker\Generator as Faker;
 
-//$tipo->
-
+// Parcelamento e tipo tão confuso
 $factory->define(Pagamento::class, function (Faker $faker) {
     return [
-        'data' => $faker->dateTime(),
-        'valor' => $faker->randomFloat(6,10,6000),
-        'parcela' => $faker->randomDigitNot(0),
-        'tipo' => $faker->randomElement(['À vista','Crédito','Débito']),
+        'data' => $faker->date(),
+        'valor' => $faker->randomFloat (3, 10, 100),
+        'parcela' => random_int(1, 12),
+        'tipo' => $faker->randomElement(['A_VISTA', 'CREDITO', 'DEBITO']),
     ];
 });

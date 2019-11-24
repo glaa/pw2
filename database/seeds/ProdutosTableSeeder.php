@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Produto;
 
-class AgendaTableSeeder extends Seeder
+class ProdutosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,7 @@ class AgendaTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Agenda::class, 5)->create();
+        factory(Produto::class, 10)->create();
     }
 }
+

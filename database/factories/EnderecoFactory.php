@@ -10,9 +10,9 @@ $factory->define(Endereco::class, function (Faker $faker) {
     
         'rua' => $faker->streetName,
         'cidade' => $faker->city,
-        'estado' => $faker->state,
-        'bairro' => $faker->stateAbbr,
+        'estado' => $faker->stateAbbr,
+        'bairro' => $faker->streetName,
         'numero' => $faker->buildingNumber,
-        'cep' => $faker->postcode
+        'cep' => $faker->postcode,
     ];
 });

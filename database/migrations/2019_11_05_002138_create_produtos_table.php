@@ -20,7 +20,7 @@ class CreateProdutosTable extends Migration
             $table->string('nome');
             $table->integer('quantidade')->unsigned();
             $table->decimal('preco', 6, 2)->unsigned();
-            $table->decimal('desconto', 4, 2)->unsigned();
+            $table->decimal('desconto', 3, 2)->unsigned();
             $table->text('descricao');
 
             $table->bigInteger('estabelecimento_id')->unsigned();

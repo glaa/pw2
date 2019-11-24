@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
 
-class PagamentoTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class PagamentoTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Pagamento::class, 5)->create(); 
+        factory(User::class, 10)->create();
     }
 }

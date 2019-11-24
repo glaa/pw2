@@ -16,7 +16,7 @@ class CreateDisponibilidadesTable extends Migration
         Schema::create('disponibilidades', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('dia');
+            $table->enum('dia', ['SEG','TER','QUA','QUI','SEX','SAB','DOM']);
             $table->string('hora_inicio');
             $table->string('hora_fim');
             $table->bigInteger('contrato_id')->unsigned();

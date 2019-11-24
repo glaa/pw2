@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Endereco;
 
-class EnderecoTableSeeder extends Seeder
+class ProfissionalsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +11,6 @@ class EnderecoTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Endereco::class, 10)->create();
+        factory(App\Profissional::class, 10)->create();
     }
 }

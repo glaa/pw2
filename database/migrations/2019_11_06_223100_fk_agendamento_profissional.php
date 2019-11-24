@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class FkProfissionalAgendamento extends Migration
+class FkAgendamentoProfissional extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class FkProfissionalAgendamento extends Migration
      */
     public function up()
     {
-        Schema::table('profissional_agendamento', function (Blueprint $table){
-            $table->foreign('profissional_id')->references('id')->on('profissionals');
+        Schema::table('agendamento_profissional', function (Blueprint $table){
             $table->foreign('agendamento_id')->references('id')->on('agendamentos');
+            $table->foreign('profissional_id')->references('id')->on('profissionals');
         });
     }
 
@@ -26,8 +26,8 @@ class FkProfissionalAgendamento extends Migration
      */
     public function down()
     {
-        Schema::table('profissional_agendamento', function(Blueprint $table){
-            $table->dropForeign(['profissional_id', 'agendamento_id']);
+        Schema::table('agendamento_profissional', function(Blueprint $table){
+            $table->dropForeign(['agendamento_id', 'profissional_id']);
         });
     }
 }

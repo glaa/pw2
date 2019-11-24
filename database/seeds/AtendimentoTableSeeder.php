@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class Servico_profissionalTableSeeder extends Seeder
+class AtendimentoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class Servico_profissionalTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Servico_profissional::class, 5)->create(); 
+        factory(App\Atendimento::class, 50)->create();
     }
 }

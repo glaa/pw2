@@ -24,7 +24,7 @@ class CreateEnderecosTable extends Migration
             $table->string('cep');
             $table->integer('numero')->unsigned();
         
-            $table->bigInteger('usuario_id')->unique();
+            #$table->bigInteger('usuario_id')->unique();
         });
     }
 

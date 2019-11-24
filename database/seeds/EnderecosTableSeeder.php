@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Endereco;
 
-class DisponibilidadeTableSeeder extends Seeder
+class EnderecosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class DisponibilidadeTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Disponibilidade::class, 5)->create();
+        factory(Endereco::class, 10)->create();
     }
 }

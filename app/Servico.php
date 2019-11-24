@@ -37,7 +37,7 @@ class Servico extends Model
 
     public function profissionais()
     {
-        return $this->belongsToMany('App\Profissional')->withPivot('servico_profissional');
+        return $this->belongsToMany('App\Profissional','servico_profissional')->withPivot('servico_profissional');
     }
 
     public function atendimentos()

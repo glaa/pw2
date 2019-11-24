@@ -28,6 +28,9 @@ class CreateProfissionalsTable extends Migration
      */
     public function down()
     {
+        if (Schema::hasTable('profissionals')) {
+            DB::statement('drop table profissionals cascade'); 
+        }
         Schema::dropIfExists('profissionals');
     }
 }

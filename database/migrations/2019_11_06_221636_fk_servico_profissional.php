@@ -27,7 +27,7 @@ class FkServicoProfissional extends Migration
     public function down()
     {
         Schema::table('servico_profissional', function(Blueprint $table){
-            $table->dropForeign(['servico_id', 'profissional_id']);
+            $table->dropForeign(['servico_id'], ['profissional_id']);
         });
     }
 }

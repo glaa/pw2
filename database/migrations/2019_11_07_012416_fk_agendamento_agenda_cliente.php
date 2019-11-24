@@ -27,7 +27,8 @@ class FkAgendamentoAgendaCliente extends Migration
     public function down()
     {
         Schema::table('agendamentos', function(Blueprint $table){
-            $table->dropForeign(['agenda_id', 'cliente_id']);
+            $table->dropForeign(['agenda_id'], ['cliente_id']);
         });
+
     }
 }

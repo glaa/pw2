@@ -28,7 +28,7 @@ class FkAtendimentoClienteEstabelecimentoPagamento extends Migration
     public function down()
     {
         Schema::table('atendimentos', function(Blueprint $table){
-            $table->dropForeign(['cliente_id', 'estabelecimento_id', 'pagamento_id']);
+            $table->dropForeign(['cliente_id'], ['estabelecimento_id'], ['pagamento_id']);
         });
     }
 }

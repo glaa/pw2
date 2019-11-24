@@ -44,6 +44,6 @@ $factory->afterCreating(Atendimento::class, function ($atendimento, $faker) {
     $produtos = App\Produto::find($arrey_produtos);
     $atendimento->produtos()->attach($produtos);
 
-    $profissionais = App\Produto::find($arrey_profissionais);
-    $atendimento->produtos()->attach($profissionais);
+    $profissionais = App\Profissional::find($arrey_profissionais);
+    $atendimento->profissionais()->attach($profissionais);
 });

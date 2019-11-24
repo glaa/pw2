@@ -27,7 +27,7 @@ class FkAgendaEstabelecimentoProfissional extends Migration
     public function down()
     {
         Schema::table('agendas', function(Blueprint $table){
-            $table->dropForeign(['estabelecimento_id', 'profissional_id']);
+            $table->dropForeign(['estabelecimento_id'], ['profissional_id']);
         });
     }
 }

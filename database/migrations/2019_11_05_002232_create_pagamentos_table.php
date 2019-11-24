@@ -32,6 +32,9 @@ class CreatePagamentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pagamentos');
+        if (Schema::hasTable('pagamentos')) {
+            DB::statement('drop table pagamentos cascade'); 
+        }
+        //Schema::dropIfExists('pagamentos');
     }
 }

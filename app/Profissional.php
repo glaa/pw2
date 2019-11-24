@@ -41,6 +41,6 @@ class Profissional extends Model
 
     public function servicos()
     {
-        return $this->belongsToMany('App\Servico')->withPivot('servico_profissional');
+        return $this->belongsToMany('App\Servico','servico_profissional')->withPivot('servico_profissional');
     }
 }

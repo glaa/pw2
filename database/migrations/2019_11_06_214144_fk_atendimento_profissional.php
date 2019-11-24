@@ -27,7 +27,7 @@ class FkAtendimentoProfissional extends Migration
     public function down()
     {
         Schema::table('atendimento_profissional', function(Blueprint $table){
-            $table->dropForeign(['atendimento_id', 'profissional_id']);
+            $table->dropForeign(['atendimento_id'], ['profissional_id']);
         });
     }
 }

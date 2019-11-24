@@ -25,7 +25,7 @@ $factory->afterCreating(Servico::class, function ($servico, $faker) {
        array_push($arrey_profissionais, factory(App\Profissional::class)->create()->id);
     }
 
-    $profissionais = App\Produto::find($arrey_profissionais);
+    $profissionais = App\Profissional::find($arrey_profissionais);
     $servico->profissionais()->attach($profissionais);
 });
 

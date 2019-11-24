@@ -27,7 +27,7 @@ class FkAtendimentoProduto extends Migration
     public function down()
     {
         Schema::table('atendimento_produto', function(Blueprint $table){
-            $table->dropForeign(['atendimento_id', 'produto_id']);
+            $table->dropForeign(['atendimento_id'], ['produto_id']);
         });
     }
 }

@@ -27,7 +27,7 @@ class FkContratoEstabelecimentoProfissional extends Migration
     public function down()
     {
         Schema::table('contratos', function(Blueprint $table){
-            $table->dropForeign(['estabelecimento_id', 'profissional_id']);
+            $table->dropForeign(['estabelecimento_id'], ['profissional_id']);
         });
     }
 }

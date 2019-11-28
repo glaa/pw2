@@ -17,7 +17,7 @@ class Endereco extends Model
         'cidade' => 'required|min:2|max:40', 
         'estado' => 'required|min:2|max:2', 
         'cep' => 'required|digits:8', 
-        'numero' => 'required|digits',
+        'numero' => 'required|numeric',
     ];
 
     public static $messages = [

@@ -32,6 +32,7 @@ class User extends Authenticatable
     public static $messages = [
         'name.*' => 'O campo nome é obrigatório e deve ter entre 5 e 100 caracteres',
         'email.required' => 'O campo email é obrigatório',
+        'password.*' => 'O campo senha é obrigatório e dever conter no mínimo 8 caracteres',
         'email.email' => 'O email está em um formato inválido',
         'email.unique:users,email' => 'O email já está em uso',
         'telefone.*' => 'O campo telefone é obrigatório e deve ter 11 digitos'

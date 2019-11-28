@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cadastrar/cliente', function () {
+
+    return view('cadastrarCliente');
+});
+
+Route::get('/cadastrar/cliente/{user}', function ($user) {
+    var_dump($user);
+    //return view('cadastrarCliente');
+});
+
+Route::post('/cadastrar/cliente', 'CadastrarClienteController@cadastrar');

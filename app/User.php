@@ -25,7 +25,7 @@ class User extends Authenticatable
         'email' => 'required|email|unique:users,email',
         'password' => 'required|min:8',
         'telefone' => 'required|digits:11',
-        'endereco_id' => 'required|exists:enderecos,id|unique:users,endreco_id',
+        //'endereco_id' => 'required|exists:enderecos,id|unique:users,endreco_id',
         'tipo_usuario' => 'required|in:CLIENTE, ESTABELECIMENTO'
     ];
 

@@ -15,7 +15,7 @@ class Cliente extends Model
 
     public static $rules = [
         'apelido' => 'required|min:5|max:40',
-        'usuario_id' => 'required|unique:users,id|exists:users,id',
+        //'usuario_id' => 'required|unique:users,id|exists:users,id',
     ];
     
     public static $messages = [

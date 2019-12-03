@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Cliente;
 use App\User;
 use App\Endereco;
@@ -27,20 +28,21 @@ class ClienteController extends Controller
         $usuario = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
             'telefone' => $request->telefone,
             'endereco_id' => $endereco->id,
             'tipo_usuario' => $request->tipo_usuario,
         ]);
         
       
-        $cliente = Cliente([
+        Cliente::create([
             'apelido' => $request->apelido,
             'usuario_id' =>  $usuario->id,
         ]);
 
-        //return redirect()->route('/create.cliente/{endereco}', comparct(['endereco']));
+        return redirect()->route('home');
         
         
     }
 }
+

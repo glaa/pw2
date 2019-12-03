@@ -2,10 +2,10 @@
 
 @section('content')
     @if($errors->any())
-                    <h3>{{$errors}}</h3>
-                    
-                    <strong style="color: red"><h3>Erro ao cadastrar: </h3></strong><br/>
+        <h3>{{$errors}}</h3>
+        <strong style="color: red"><h3>Erro ao cadastrar: </h3></strong><br/>
     @endif
+    
     <div class="container">
         <div class="row justify-content-center" >
             

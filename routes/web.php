@@ -17,12 +17,11 @@ Route::get('/', function () {
 
 Route::get('cliente.create', function () {
 
-    return view('cadastrarCliente2');
-});
-
-Route::get('create.cliente/{endereco}', function ($endereco) {
-    return var_dump($endereco);
-    //return view('cadastrarCliente');
+    return view('cadastrarCliente3');
 });
 
 Route::post('cliente.create', 'ClienteController@cadastrar');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

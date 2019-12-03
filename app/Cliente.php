@@ -11,7 +11,7 @@ class Cliente extends Model
      *
      * @var array
      */
-    protected $fillable = ['usario_id', 'apelido'];
+    protected $fillable = ['apelido', 'usuario_id'];
 
     public static $rules = [
         'apelido' => 'required|min:5|max:40',

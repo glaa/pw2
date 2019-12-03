@@ -24,7 +24,7 @@ class User extends Authenticatable
         'name' => 'required|min:5|max:100', 
         'email' => 'required|email|unique:users,email',
         'password' => 'required|min:8',
-        'telefone' => 'required|digits:11',
+        'telefone' => 'required|regex:/^\(\d{2}\) \d{4,5}-\d{4}?$/',
         //'endereco_id' => 'required|exists:enderecos,id|unique:users,endreco_id',
         'tipo_usuario' => 'required|in:CLIENTE, ESTABELECIMENTO'
     ];

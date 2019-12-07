@@ -1,6 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
-@section('content')
+@section('nav')
+<nav class="navbar fixed-top py-4 navbar-expand-lg navbar-dark bg-danger">
+        <div class="container">
+            <a class="navbar-brand" href="home2">
+                <h1>{{ config('app.name', 'Laravel') }}</h1>
+            </a>    
+        </div>
+    </nav>
+
+    <br>
+    <br>
+@endsection
+
+@section('main')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -53,7 +66,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-danger">
                                     {{ __('Login') }}
                                 </button>
 
@@ -62,8 +75,17 @@
                                         {{ __('Esqueceu a senha?') }}
                                     </a>
                                 @endif
+                            
                             </div>
                         </div>
+                            
+            
+                        <div class="col-md-6 offset-md-4  text-muted  d-flex justify-content-center">
+                                <br>
+                                <small >não tem cadastro? 
+                                    <a class="text-muted" href="cliente.create"><ins>cadastre-se</ins></a>
+                                </small>
+                            </div>
                     </form>
                 </div>
             </div>

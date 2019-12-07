@@ -26,12 +26,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-<<<<<<< HEAD
 Route::get('buscar',function(){
     return view('buscar');
 });
-=======
+
 Route::get('/home2', function(){
     return view('home2');
 })->name('home2');
->>>>>>> a61feff47e06bab2d03f5831e13d26662c7ad441
+

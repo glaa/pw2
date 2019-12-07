@@ -11,16 +11,30 @@
 |
 */
 
-Route::get('/', function () {
+/**Route::get('/', function () {
     return view('welcome');
+});*/
+
+Route::get('/', function () {
+    return view('home2');
+});
+
+Route::get('usuario.create', function () {
+
+    return view('cadastrar');
 });
 
 Route::get('cliente.create', function () {
 
     return view('cadastrarCliente3');
 });
-
 Route::post('cliente.create', 'ClienteController@cadastrar');
+
+Route::get('estabelecimento.create', function () {
+
+    return view('cadastrarEstabelecimento');
+});
+Route::post('estabelecimento.create', 'EstabelecimentoController@cadastrar');
 
 Auth::routes();
 

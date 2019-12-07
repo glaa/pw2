@@ -30,7 +30,7 @@
                         <a class="nav-link" href="{{ route('login') }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cliente.create">Cadastrar</a>
+                        <a class="nav-link" href="usuario.create">Cadastrar</a>
                     </li>          
                 </ul>
             </div> 
@@ -56,6 +56,11 @@
                         
                             <div class="carousel-item active">
                                 <img src="{{ URL::to('/') }}/storage/imgs/promo-1.jpg" class="img-fluid d-block">
+
+                                <div class="carousel-caption text-danger">
+                                    <h1>Testando</h1>
+                                    <p  class="lead">fdsfkasdfjasdlfjaslfdjaslfjaslfjals</p>
+                                </div>
                                 
                             </div> 
 

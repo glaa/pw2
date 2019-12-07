@@ -26,7 +26,8 @@ class User extends Authenticatable
         'password' => 'required|min:8',
         'telefone' => 'required|regex:/^\(\d{2}\) \d{4,5}-\d{4}?$/',
         //'endereco_id' => 'required|exists:enderecos,id|unique:users,endreco_id',
-        'tipo_usuario' => 'required|in:CLIENTE, ESTABELECIMENTO'
+        //'tipo_usuario' => 'required|in:CLIENTE, ESTABELECIMENTO'
+        'tipo_usuario' => array('required', 'regex:/(CLIENTE)|(ESTABELECIMENTO)/'),
     ];
 
     public static $messages = [

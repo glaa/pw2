@@ -25,3 +25,7 @@ Route::post('cliente.create', 'ClienteController@cadastrar');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('buscar',function(){
+    return view('buscar');
+});

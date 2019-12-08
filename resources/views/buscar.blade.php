@@ -7,7 +7,7 @@
     </div>
     <div class="row">
         <div>
-        <img src="resources/views/img/produto.jpg">
+        <img src="/public/img/produto.jpg">
             <p>Nome do produto</p>
             <p>Descrição do produto</p>
             <p>R$ 00,00</p>

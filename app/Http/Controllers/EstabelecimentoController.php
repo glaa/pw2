@@ -63,7 +63,7 @@ class EstabelecimentoController extends Controller
         $produto = Produto::find($id);
         $cliente = Cliente::where('usuario_id', Auth::user()->id)->first();
         $estabelecimento = Estabelecimento::find($produto->estabelecimento_id)->first();
-
+        $produto->quantidade = $produto->quantidade - 1;
         $pagamento = Pagamento::create([
             'data' => now(),
             'valor' => $produto->preco,

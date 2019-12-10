@@ -70,8 +70,8 @@
                             @else
                                 @if(Auth::user()->tipo_usuario == "CLIENTE")
                                     <a class="dropdown-item" href="{{ URL::to('home2') }}"> 
-                                    </a>
                                         Perfil
+                                    </a>
                                     <a class="dropdown-item" href="{{ URL::to('home2') }}"> 
                                         Meus pedidos
                                     </a>

@@ -18,7 +18,7 @@ class ProdutoController extends Controller
             $estabelecimento = Estabelecimento::where('usuario_id',  Auth::user()->id)->first();
 
             Produto::create([
-                'nome' => $request->nome,
+                'nome' => strtolower($request->nome),
                 'preco' => $request->preco,
                 'quantidade' => $request->quantidade,
                 'desconto' => $request->desconto,

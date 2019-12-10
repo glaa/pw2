@@ -2,7 +2,7 @@
 
 @section('nav')
     
-    <nav class="navbar fixed-top navbar-expand-lg py-4 navbar-dark bg-danger">
+    <nav class="navbar fixed-top navbar-expand-lg mb-3 navbar-dark bg-danger">
         <div class="container">
             <a class="navbar-brand" href="home2"><h1>{{ config('app.name', 'Laravel') }}</h1> </a>
             
@@ -90,9 +90,9 @@
 
 
 @section('main')
-    <div class="container-fluid">
+    <div class="container-fluid mt-3 w-50">
         <div class="row justify-content-center">
-            <div class="w-100">
+            <div class=" ">
                 <div id="carouselPaginaPrincipal" class="carousel slide" data-ride="carousel">
                 
                     <!-- Indicators -->

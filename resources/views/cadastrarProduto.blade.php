@@ -55,7 +55,7 @@
 
                             @if(Auth::user()->tipo_usuario == "ESTABELECIMENTO") 
                                 
-                                <a class="dropdown-item" href="{{ url('/produto.create')') }}"> 
+                                <a class="dropdown-item" href="{{ url('/produto.create') }}"> 
                                     Cadastrar Produtos
                                 </a>
 

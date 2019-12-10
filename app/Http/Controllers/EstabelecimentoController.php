@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 use App\Endereco;
 use App\User;
 use App\Estabelecimento;
+use App\Produto;
 
 class EstabelecimentoController extends Controller
 {
@@ -43,5 +45,19 @@ class EstabelecimentoController extends Controller
         
         return redirect()->route('home');
 
+    }
+
+
+    public function listarProdutos(){
+        $estabelecimento = Estabelecimento::where('usuario_id',  Auth::user()->id)->first();
+        $produtos = $estabelecimento->produtos()->get();
+        return view ("listarMeusProdutos",[
+            'produtos' => $produtos]);
+    }
+
+
+    public function compra($id){
+        $produto = Produto::find($id);
+        $estabelecimento = Estabelecimento::find($produto->estabelecimento_id);
     }
 }

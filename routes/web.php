@@ -19,6 +19,13 @@ Route::get('/', function () {
     return view('home2');
 });
 
+Route::get('usuario.logado', function () {
+    return view('userLogado');
+});
+
+
+
+
 Route::get('usuario.create', function () {
 
     return view('cadastrar');
@@ -30,11 +37,29 @@ Route::get('cliente.create', function () {
 });
 Route::post('cliente.create', 'ClienteController@cadastrar');
 
+
+
+
 Route::get('estabelecimento.create', function () {
 
     return view('cadastrarEstabelecimento');
 });
 Route::post('estabelecimento.create', 'EstabelecimentoController@cadastrar');
+
+Route::get('meus.produtos', 'EstabelecimentoController@listarProdutos');
+
+
+
+Route::get('produto.create', function () {
+
+    return view('cadastrarProduto');
+});
+Route::post('produto.create', 'ProdutoController@cadastrar');
+Route::get('buscar={nome?}', 'ProdutoController@buscar');
+Route::get('produto/{id}', 'ProdutoController@visualizar');
+
+Route::get('produto/{id}/comprar', 'ClienteController@fecharCompra');
+
 
 Auth::routes();
 

@@ -50,7 +50,7 @@
                                 
                             <!--Campo cpf_cnpj-->
                             <div class="form-group row">
-                                <label for="cpf_cnpj" class="col-md-4 col-form-label text-md-right">{{ __('cpf_cnpj') }}</label>
+                                <label for="cpf_cnpj" class="col-md-4 col-form-label text-md-right">{{ __('cpf') }}</label>
             
                                 <div class="col-md-6">
                                     <input id="cpf_cnpj" type="text" class="form-control @error('cpf_cnpj') is-invalid @enderror" name="cpf_cnpj" value="{{ old('cpf_cnpj') }}" placeholder="000.000.000-00" onkeypress="$(this).mask('000.000.000-00')" required autocomplete="cpf_cnpj">

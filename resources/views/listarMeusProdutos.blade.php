@@ -8,9 +8,8 @@
             
             <div class="container-fluid d-flex justify-content-center">
                 <form class="form-group  w-75" action="{{url('buscar/')}}" method="GET">
-                    
                     <div class="input-group">
-                        <input class="form-control form-control-lg border-left-0 border " type="search" placeholder="Buscar produto" id="buscar"  name="buscar" value="{{ old('buscar') }}">
+                            <input class="form-control form-control-lg border-left-0 border " type="search" placeholder="Buscar produto" id="buscar"  name="buscar" value="{{ old('buscar') }}">
                         
                         <div class="input-group-prepend">
                             <button class="btn btn-light text-danger" type="submit">
@@ -66,18 +65,17 @@
 
                                 <a class="dropdown-item" href="{{ url('/') }}"> 
                                     Minhas vendas
-                                </a>   
-
-                                @else
-                                    @if(Auth::user()->tipo_usuario == "CLIENTE")
-                                        <a class="dropdown-item" href="{{ url('/produto.create') }}"> 
-                                            Perfil
-                                        </a>
-
-                                        <a class="dropdown-item" href="{{ url('/') }}"> 
-                                            Meus pedidos
-                                        </a>
-                                    @endif
+                                </a>
+                           
+                            @else
+                                @if(Auth::user()->tipo_usuario == "CLIENTE")
+                                    <a class="dropdown-item" href="{{ url('/produto.create') }}"> 
+                                    </a>
+                                        Perfil
+                                    <a class="dropdown-item" href="{{ url('/') }}"> 
+                                        Meus pedidos
+                                    </a>
+                                @endif
                             @endif
                         </div>
                     </li>
@@ -85,57 +83,48 @@
                 </ul>
             </div> 
     </nav>
+
+    <br><br>
 @endsection
 
-
-
 @section('main')
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="w-100">
-                <div id="carouselPaginaPrincipal" class="carousel slide" data-ride="carousel">
+    @if($errors->any())
+        <h3>{{$errors}}</h3>
+        <strong style="color: red"><h3>Erro ao cadastrar: </h3></strong><br/>
+    @endif
+    
+    <div class="container">
+        
+        <h2 class="mb-0">Meus produtos</h2>
+        <small class="text-muted">{{Auth::user()->name}}</small>
+        <br>
+        <br>
+        <br>
+        
+        <div class="row ">
+        
+            
+            @foreach ($produtos as $produto)
+            @if ($loop->iteration % 4 == 0)
+                <div class="row card-group">
+            
+                </div>
+            
+            @else
+                <div class="card col-3 bg-light mb-3">
+                    <div class="card-body">
+                        <a class="card-link" href="estabelecimento.create">
+                            <img src="{{ URL::to('/') }}/storage/imgs/shampoo.png" class="img-fluid d-block">
+                            <h6 class="card-text text-muted">{{$produto->nome}}</h6>
+                            
+                            <h5 class="card-text font-weight-bold text-dark">R$ {{$produto->preco}}</h5>
+                        </a>
+                    </div>
+                </div>
+            @endif
+            @endforeach   
                 
-                    <!-- Indicators -->
-                    <ul class="carousel-indicators">
-                        <li data-target="#carouselPaginaPrincipal" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselPaginaPrincipal" data-slide-to="1"></li>
-                        <li data-target="#carouselPaginaPrincipal" data-slide-to="2"></li>
-                    </ul>
-
-                    <div class="carousel-inner">
-                        
-                            <div class="carousel-item active">
-                                <img src="{{ URL::to('/') }}/storage/imgs/promo-1.jpg" class="img-fluid d-block">
-
-                                <div class="carousel-caption text-danger">
-                                    <h1>Testando</h1>
-                                    <p  class="lead">fdsfkasdfjasdlfjaslfdjaslfjaslfjals</p>
-                                </div>
-                                
-                            </div> 
-
-                            <div class="carousel-item">
-                                <img src="{{ URL::to('/') }}/storage/imgs/promo-2.jpg" class="img-fluid d-block">
-                            </div> <!--Fim carousel-item 2-->
-                    
-                            <div class="carousel-item">
-                                <img src="{{ URL::to('/') }}/storage/imgs/promo-4.jpg" class="img-fluid d-block">
-                            </div> <!--Fim carousel-item 3-->
-                        
-                    </div> <!--Fim carousel-inner-->
-
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#carouselPaginaPrincipal" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                        <span class="sr-only">Anterior</span>
-                    </a>
-                    
-                    <a class="carousel-control-next" href="#carouselPaginaPrincipal" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                
-                </div> <!--Fim carousel-->
-            </div>
         </div>
+        
     </div>
 @endsection

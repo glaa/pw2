@@ -83,7 +83,7 @@
                         <div class="col-md-6 offset-md-4  text-muted  d-flex justify-content-center">
                                 <br>
                                 <small >não tem cadastro? 
-                                    <a class="text-muted" href="cliente.create"><ins>cadastre-se</ins></a>
+                                    <a class="text-muted" href="usuario.create"><ins>cadastre-se</ins></a>
                                 </small>
                             </div>
                     </form>

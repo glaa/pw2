@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Cliente;
 use App\User;
 use App\Endereco;
+use App\Estabelecimento;
+use App\Produto;
 
 class ClienteController extends Controller
 {
@@ -41,7 +43,7 @@ class ClienteController extends Controller
         ]);
 
         return redirect()->route('home');
- 
+
         
     }
 }

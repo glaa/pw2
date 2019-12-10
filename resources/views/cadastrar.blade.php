@@ -20,7 +20,7 @@
     @endif
     
     <div class="container">
-        <h2>Cadastrar Cliente</h2>
+        <h2>Cadastro de Usuário</h2>
         
         <div class="row justify-content-center" >
             

@@ -70,11 +70,11 @@
 
                                 @else
                                     @if(Auth::user()->tipo_usuario == "CLIENTE")
-                                        <a class="dropdown-item" href="{{ url('/produto.create') }}"> 
+                                        <a class="dropdown-item" href="{{ URL::to('home2') }}"> 
                                             Perfil
                                         </a>
 
-                                        <a class="dropdown-item" href="{{ url('/') }}"> 
+                                        <a class="dropdown-item" href="{{ URL::to('home2') }}"> 
                                             Meus pedidos
                                         </a>
                                     @endif

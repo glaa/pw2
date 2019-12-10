@@ -58,7 +58,7 @@ Route::post('produto.create', 'ProdutoController@cadastrar');
 Route::get('buscar={nome?}', 'ProdutoController@buscar');
 Route::get('produto/{id}', 'ProdutoController@visualizar');
 
-Route::get('produto/{id}/comprar', 'ClienteController@fecharCompra');
+Route::get('comprar.produto/{id}', 'EstabelecimentoController@comprar');
 
 
 Auth::routes();

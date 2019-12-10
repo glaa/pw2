@@ -46,6 +46,6 @@ class ProdutoController extends Controller
         
 
         
-        return view('comprarProduto', ['nome_estabelecimento' => $nome, 'produto' => $produto]);
+        return view('comprarProduto', ['comprou' => False, 'nome_estabelecimento' => $nome, 'produto' => $produto]);
     }
 }

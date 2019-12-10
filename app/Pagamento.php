@@ -17,7 +17,8 @@ class Pagamento extends Model
         'data' => 'required|date',
         'valor' => 'required|regex:/^\d+(\.\d{1,2})?$/',
         'parcela' => 'required|numeric',
-        'tipo' => 'required|in A_VISTA, CREDITO, DEBITO',        
+        'tipo' => array('required', 'regex:/(A_VISTA)|(CREDITO)|(DEBITO)/'),
+        //'tipo' => 'required|in A_VISTA, CREDITO, DEBITO',        
     ];
     
     public static $messages = [

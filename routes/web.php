@@ -26,9 +26,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('buscar',function(){
-    return view('buscar');
-});
+Route::get('buscar/{nome?}','BuscarProdutoController@buscar')->name('buscar.produtos');
+
 
 Route::get('/home2', function(){
     return view('home2');

@@ -11,15 +11,15 @@ class Cliente extends Model
      *
      * @var array
      */
-    protected $fillable = ['usario_id', 'apelido'];
+    protected $fillable = ['apelido', 'usuario_id'];
 
     public static $rules = [
-        'apelido' => 'required|min:5|max:40',
-        'usuario_id' => 'required|unique:users,id|exists:users,id',
+        'apelido' => 'required|max:40',
+        //'usuario_id' => 'required|unique:users,id|exists:users,id',
     ];
     
     public static $messages = [
-        'apelido.*' => 'O campo apelido é obrigatório e deve ter entre 5 e 40 caracteres'
+        'apelido.*' => 'O campo apelido é obrigatório e deve ter no máximo 40 caracteres'
     ];
     
     public function usuario()

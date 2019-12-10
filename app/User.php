@@ -24,14 +24,16 @@ class User extends Authenticatable
         'name' => 'required|min:5|max:100', 
         'email' => 'required|email|unique:users,email',
         'password' => 'required|min:8',
-        'telefone' => 'required|digits:11',
-        'endereco_id' => 'required|exists:enderecos,id|unique:users,endreco_id',
-        'tipo_usuario' => 'required|in:CLIENTE, ESTABELECIMENTO'
+        'telefone' => 'required|regex:/^\(\d{2}\) \d{4,5}-\d{4}?$/',
+        //'endereco_id' => 'required|exists:enderecos,id|unique:users,endreco_id',
+        //'tipo_usuario' => 'required|in:CLIENTE, ESTABELECIMENTO'
+        'tipo_usuario' => array('required', 'regex:/(CLIENTE)|(ESTABELECIMENTO)/'),
     ];
 
     public static $messages = [
         'name.*' => 'O campo nome é obrigatório e deve ter entre 5 e 100 caracteres',
         'email.required' => 'O campo email é obrigatório',
+        'password.*' => 'O campo senha é obrigatório e dever conter no mínimo 8 caracteres',
         'email.email' => 'O email está em um formato inválido',
         'email.unique:users,email' => 'O email já está em uso',
         'telefone.*' => 'O campo telefone é obrigatório e deve ter 11 digitos'

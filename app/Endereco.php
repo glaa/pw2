@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Endereco extends Model
 {
     protected $fillable = [
-        'rua', 'bairro', 'cidade', 'estado', 'cep', 'numero'
+        'rua', 'bairro', 'cidade', 'estado', 'cep', 'numero',
     ];
 
 
@@ -16,8 +16,8 @@ class Endereco extends Model
         'bairro' => 'required|min:2|max:40', 
         'cidade' => 'required|min:2|max:40', 
         'estado' => 'required|min:2|max:2', 
-        'cep' => 'required|digits:8', 
-        'numero' => 'required|digits',
+        'cep' => 'required|regex:/^\d{5}-\d{3}?$/', 
+        'numero' => 'required|numeric',
     ];
 
     public static $messages = [

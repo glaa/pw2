@@ -12,7 +12,7 @@ use App\Estabelecimento;
 $factory->define(Estabelecimento::class, function (Faker $faker) {
     $faker->addProvider(new FakerBR($faker));
     return [
-        'cpf_cnpj' =>$faker->cnpj,
+        'cpf_cnpj' =>$faker->cpf,
         'usuario_id' => function(){
             $user =  factory(\App\User::class)->create(['tipo_usuario'=>'ESTABELECIMENTO']);
             return $user->id;

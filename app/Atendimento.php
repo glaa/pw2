@@ -15,17 +15,17 @@ class Atendimento extends Model
     ];
 
     public static $rules = [
-        'estabelecimento_id' => 'required|exists:estabelecimentos,id', 
-        'cliente_id' => 'required|exists:clientes,id', 
-        'pagamento_id' => 'required|exists:pagamentos,id|unique:pagamentos,id',    
+        //'estabelecimento_id' => 'required|exists:estabelecimentos,id', 
+       // 'cliente_id' => 'required|exists:clientes,id', 
+        //'pagamento_id' => 'required|exists:pagamentos,id|unique:pagamentos,id',    
         'data' => 'required|date',
         
     ];
     
     public static $messages = [
-        'estabelecimento_id.*' => 'Um atendimento deve obrigatoriamente ser realizado por um estabelecimento', 
-        'cliente_id.*' => 'Um atendimento deve obrigatoriamente ter cliente atendido', 
-        'pagamento_id.*' => 'Ao o final do atendimento tem que haver um pagamento',    
+        //'estabelecimento_id.*' => 'Um atendimento deve obrigatoriamente ser realizado por um estabelecimento', 
+        //'cliente_id.*' => 'Um atendimento deve obrigatoriamente ter cliente atendido', 
+        //'pagamento_id.*' => 'Ao o final do atendimento tem que haver um pagamento',    
         'data.*' => 'A data da realização do atendimento é obrigatória',
     ];
 

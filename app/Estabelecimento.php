@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Estabelecimento extends Model
 {
-    protected $fillable = ['usario_id', 'cpf_cnpj'];
+    protected $fillable = ['usuario_id', 'cpf_cnpj'];
 
     public static $rules = [
-        'cpf_cnpj' => 'required|cnpj',
-        'usuario_id' => 'required|unique:users,id|exists:users,id',
+        'cpf_cnpj' => 'required|cpf',
+        //'usuario_id' => 'required|unique:users,id|exists:users,id',
     ];
     
     public static $messages = [
         'cpf_cnpj.required' => 'O campo cnpj/cpf é obrigatório',
-        'cpf_cnpj.cnpj' => 'O cnpj inválido'
+        'cpf_cnpj.cpf' => 'O cpf inválido'
     ];
 
 
